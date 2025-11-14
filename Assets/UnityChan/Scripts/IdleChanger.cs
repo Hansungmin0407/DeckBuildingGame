@@ -26,8 +26,6 @@ namespace UnityChan
       //private float _seed = 0.0f;					// ランダム判定用シード
         public bool isGUI = true;
 	
-
-
 		// Use this for initialization
 		void Start ()
 		{
@@ -40,7 +38,7 @@ namespace UnityChan
 		}
 	
 		// Update is called once per frame
-		void  Update ()
+		void  Update ()	
 		{
 			// ↑キー/スペースが押されたら、ステートを次に送る処理
 			if (Input.GetKeyDown ("up") || Input.GetButton ("Jump")) {

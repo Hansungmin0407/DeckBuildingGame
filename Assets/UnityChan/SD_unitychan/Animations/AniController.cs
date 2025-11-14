@@ -1,12 +1,17 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class AniController : MonoBehaviour
 {
     private Animator anim;
+    private CharacterController controller;
+    public float moveSpeed = 5.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -14,11 +19,7 @@ public class AniController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            anim.SetBool("NextStage", true);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            anim.SetBool("NextStage", false);
+            StartCoroutine(NextBattle(38.0f));
         }
         if ( Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -28,5 +29,24 @@ public class AniController : MonoBehaviour
         {
             anim.SetTrigger("Attack");
         }
+    }
+    private IEnumerator NextBattle(float distance)
+    {
+        anim.SetBool("NextStage", true);
+
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = startPosition + (Vector3.right * distance);
+        float duration = distance / moveSpeed;
+        float enlapse = 0f;
+
+        while (enlapse < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, endPosition, (enlapse / duration));
+
+            enlapse += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = endPosition;
+        anim.SetBool("NextStage", false);
     }
 }
