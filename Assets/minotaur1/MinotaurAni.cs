@@ -1,30 +1,26 @@
 using UnityEngine;
 
-public class MinotaurAni : MonoBehaviour
+public class MinotaurAni : MonoBehaviour, IMonsterAnimatable
 {
     private Animator anim;
+
+    public float damagedAnimLength = 2.0f;
+    public float deadAnimLength = 2.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public float DamagedAni()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            anim.SetTrigger("Damaged");
-        }
+        anim.SetTrigger("Damaged1");
+        return damagedAnimLength;
+    }
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            anim.SetTrigger("Damaged2");
-        }
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            anim.SetTrigger("Death");
-        }
+    public float DeadAni()
+    {
+        anim.SetTrigger("Death");
+        return deadAnimLength;
     }
 }

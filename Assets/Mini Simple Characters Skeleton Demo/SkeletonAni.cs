@@ -1,25 +1,26 @@
 using UnityEngine;
 
-public class SkeletonAni : MonoBehaviour
+public class SkeletonAni : MonoBehaviour, IMonsterAnimatable
 {
     private Animator anim;
+
+    public float damagedAnimLength = 2.0f;
+    public float deadAnimLength = 2.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public float DamagedAni()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            anim.SetTrigger("Damaged");
-        }
+        anim.SetTrigger("Damaged");
+        return damagedAnimLength;
+    }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            anim.SetTrigger("Death");
-        }
+    public float DeadAni()
+    {
+        anim.SetTrigger("Death");
+        return deadAnimLength;
     }
 }

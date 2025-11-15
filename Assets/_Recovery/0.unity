@@ -1797,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1805,7 +1805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0000133514395
+      value: -0.000013470649
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3432,7 +3432,7 @@ Transform:
   m_GameObject: {fileID: 287495912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.200001, y: 1.2200001, z: 2.720001}
+  m_LocalPosition: {x: 4.200001, y: 0.8200001, z: 2.3200004}
   m_LocalScale: {x: 0.49999988, y: 0.5, z: 0.49999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4109,7 +4109,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 3.0500002, z: -10.500015}
+  m_LocalPosition: {x: 0.79999954, y: 2.0500002, z: -10.500015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5380,7 +5380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414871117303439923, guid: aef9a3e063e740f4d8100584de73ceb4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 128.3501
+      value: 127.35009
       objectReference: {fileID: 0}
     - target: {fileID: 4414871117303439923, guid: aef9a3e063e740f4d8100584de73ceb4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5679,11 +5679,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6966706505589406848, guid: 49a5f24a081cbbc44bd23d76c2869723, type: 3}
   m_PrefabInstance: {fileID: 486763613}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &488292382 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2226043203960135751, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-  m_PrefabInstance: {fileID: 776271422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &494686348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5906,8 +5901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f1de5cb09aee54d93cc806da99162b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinotaurAni
-  damagedAnimLength: 2
-  deadAnimLength: 2
 --- !u!4 &507546601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4414871117303439923, guid: aef9a3e063e740f4d8100584de73ceb4, type: 3}
@@ -9098,70 +9091,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: minotaurDead
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: playerAttack
-      value: 
-      objectReference: {fileID: 72909209}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDead
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: enemyMinotaur
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: enemySkeleton
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: minotaurDamage
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 72909209}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDamage
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDead.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDamage.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDead.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDead.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2037681270}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDead.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1576786135}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDamage.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDamage.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2037681270}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDamage.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1576786135}
     - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.35009
@@ -9450,7 +9379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2468889828458600031, guid: 4a46e821c58b5cd42b14eaab6d197266, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.35009
+      value: 13.35009
       objectReference: {fileID: 0}
     - target: {fileID: 2468889828458600031, guid: 4a46e821c58b5cd42b14eaab6d197266, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11111,7 +11040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9137904178190238727, guid: 20818fda9cf85f94ca4d9803d50fb8d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.35009
+      value: 51.35009
       objectReference: {fileID: 0}
     - target: {fileID: 9137904178190238727, guid: 20818fda9cf85f94ca4d9803d50fb8d8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11929,8 +11858,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2eb39e3e2c9e4abfd70337cd87d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonAni
-  damagedAnimLength: 2
-  deadAnimLength: 2
 --- !u!4 &1097761021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2468889828458600031, guid: 4a46e821c58b5cd42b14eaab6d197266, type: 3}
@@ -12999,7 +12926,7 @@ Transform:
   m_GameObject: {fileID: 1223533454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.6, y: 0.9, z: 2.4}
+  m_LocalPosition: {x: 2.6, y: 0.5, z: 2}
   m_LocalScale: {x: 0.49999988, y: 0.5, z: 0.49999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15071,29 +14998,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1097761016}
     - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
-      propertyPath: DiceMachine
-      value: 
-      objectReference: {fileID: 488292382}
-    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: ItemManager
       value: 
       objectReference: {fileID: 135671728}
-    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
-      propertyPath: enemyMinotaur
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
-      propertyPath: enemySkeleton
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 72909209}
-    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
-      propertyPath: runningAnimTime
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: Monsters.Array.size
       value: 4
@@ -16534,8 +16441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2eb39e3e2c9e4abfd70337cd87d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonAni
-  damagedAnimLength: 2
-  deadAnimLength: 2
 --- !u!4 &1576786137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412, type: 3}
@@ -21612,8 +21517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2eb39e3e2c9e4abfd70337cd87d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonAni
-  damagedAnimLength: 2
-  deadAnimLength: 2
 --- !u!4 &2037681272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9137904178190238727, guid: 20818fda9cf85f94ca4d9803d50fb8d8, type: 3}
@@ -22854,7 +22757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.35009
+      value: 89.35009
       objectReference: {fileID: 0}
     - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412, type: 3}
       propertyPath: m_LocalPosition.y

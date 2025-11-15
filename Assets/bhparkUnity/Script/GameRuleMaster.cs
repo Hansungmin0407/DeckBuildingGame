@@ -1,8 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.Build.Reporting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class GameRuleMaster : MonoBehaviour
 {
-    public GameObject DIceMachine;
+
+    public AniController playerAnimator;
+
+    public float hitDelay = 1.0f;
+    public bool isAttacking = false;
+    public float runningAnimTime = 7.0f;
+    private int currentStage = 0;
+
+    public GameObject DiceMachine;
 
     //1. 다이스 정보 가져오기
 
@@ -16,8 +28,7 @@ public class GameRuleMaster : MonoBehaviour
 
     //- 아이템 키워드
     //- 아이템 효과
-
-    public GameObject Monster;
+    public GameObject Enemy;
 
     //3. 몬스터 정보 가져오기
 
@@ -36,14 +47,17 @@ public class GameRuleMaster : MonoBehaviour
 
     ItemManager itemManager;
 
-    Monster monster;
+    public List<Monster> Monsters;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        diceMachine = DIceMachine.GetComponentInChildren<DiceMachine>();
+        diceMachine = DiceMachine.GetComponentInChildren<DiceMachine>();
         itemManager = ItemManager.GetComponentInChildren<ItemManager>();
-        monster = Monster.GetComponentInChildren<Monster>();
+        if (Enemy != null)
+        {
+            Monsters = new List<Monster>(Enemy.GetComponentsInChildren<Monster>());
+        }
 
         Debug.Log("Game Rule Master is Running");
     }
@@ -55,7 +69,44 @@ public class GameRuleMaster : MonoBehaviour
         {
             diceMachine.RollDice();
         }
+
+        if (diceMachine.playerSelectDiceCount > 0 && !isAttacking)
+        {
+            StartCoroutine(PlayerAttack(diceMachine.playerSelectDiceCount));
+            diceMachine.playerSelectDiceCount = 0;
+        }
+    }
+
+    private IEnumerator PlayerAttack(int count)
+    {
+        isAttacking = true;
+        diceMachine.playerInput = false;
+
+        playerAnimator.AttackAni();
+        yield return new WaitForSeconds(hitDelay);
+
+        if (currentStage >= Monsters.Count)
+        {
+            isAttacking = false;
+            yield break;
+        }
+
+        Monster currentMonster = Monsters[currentStage];
+        int Damage = count * 10;
+        float monsterAnimTime = currentMonster.TakeDamage(Damage);
+
+        yield return new WaitForSeconds(monsterAnimTime);
+
+        if (currentMonster.IsDead())
+        {
+            currentStage++;
+            StartCoroutine(playerAnimator.NextBattle(38.0f));
+
+            yield return new WaitForSeconds(runningAnimTime);
+        }
+
+        isAttacking = false;
+        diceMachine.RollDice();
+        diceMachine.playerInput = true;
     }
 }
-
-
