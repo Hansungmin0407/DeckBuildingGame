@@ -12,6 +12,7 @@ public class AniController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        StartCoroutine(NextBattle(20.0f));
     }
 
     public IEnumerator NextBattle(float distance)
@@ -38,5 +39,10 @@ public class AniController : MonoBehaviour
     public void AttackAni()
     {
         anim.SetTrigger("Attack");
+    }
+
+    public void VictoryAni()
+    {
+        anim.SetTrigger("Victory");
     }
 }

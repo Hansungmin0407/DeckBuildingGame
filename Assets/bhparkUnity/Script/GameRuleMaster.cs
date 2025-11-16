@@ -10,8 +10,8 @@ public class GameRuleMaster : MonoBehaviour
     public AniController playerAnimator;
 
     public float hitDelay = 1.0f;
-    public bool isAttacking = false;
     public float runningAnimTime = 7.0f;
+    public bool isAttacking = false;
     private int currentStage = 0;
 
     public GameObject DiceMachine;
@@ -46,6 +46,8 @@ public class GameRuleMaster : MonoBehaviour
     DiceMachine diceMachine;
 
     ItemManager itemManager;
+
+    public Startmenu startmenu;
 
     public List<Monster> Monsters;
 
@@ -100,9 +102,22 @@ public class GameRuleMaster : MonoBehaviour
         if (currentMonster.IsDead())
         {
             currentStage++;
-            StartCoroutine(playerAnimator.NextBattle(38.0f));
+            if (!(currentStage >= Monsters.Count))
+            {
+                StartCoroutine(playerAnimator.NextBattle(38.0f));
 
-            yield return new WaitForSeconds(runningAnimTime);
+                yield return new WaitForSeconds(runningAnimTime);
+            }
+            else
+            {
+                playerAnimator.VictoryAni();
+                yield return new WaitForSeconds(hitDelay * 3);
+
+                StartCoroutine(playerAnimator.NextBattle(38.0f));
+                startmenu.StageClear();
+
+                yield break;
+            }
         }
 
         isAttacking = false;

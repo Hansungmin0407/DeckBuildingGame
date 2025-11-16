@@ -7,7 +7,6 @@ using UnityEditor.SceneManagement;
 
 public class DiceMachine : MonoBehaviour
 {
-    private GameRuleMaster ruleMaster;
     public bool playerInput = true;
 
     public List<int> diceValue;
