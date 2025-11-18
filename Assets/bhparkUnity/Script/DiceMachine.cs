@@ -10,6 +10,11 @@ public class DiceMachine : MonoBehaviour
     private GameRuleMaster ruleMaster;
     public bool playerInput = true;
 
+
+    public RollDiceButton rollDiceButton;
+
+
+
     public List<int> diceValue;
     public int diceNum = 3;
     public int playerSelectDiceValue = 0;
@@ -27,39 +32,39 @@ public class DiceMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput)
+        if (rollDiceButton.diceSelectValue != -1 && rollDiceButton.isRollDiceButtonClicked == true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (rollDiceButton.diceSelectValue == 1)
             {
                 playerSelectDiceCount = GetCountInDiceList(diceValue, 1);
                 Debug.Log("Player selected dice value: " + playerSelectDiceCount);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (rollDiceButton.diceSelectValue == 2)
             {
                 playerSelectDiceCount = GetCountInDiceList(diceValue, 2);
                 Debug.Log("Player selected dice value: " + playerSelectDiceCount);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (rollDiceButton.diceSelectValue == 3)
             {
                 playerSelectDiceCount = GetCountInDiceList(diceValue, 3);
                 Debug.Log("Player selected dice value: " + playerSelectDiceCount);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha4))
+            if (rollDiceButton.diceSelectValue == 4)
             {
                 playerSelectDiceCount = GetCountInDiceList(diceValue, 4);
                 Debug.Log("Player selected dice value: " + playerSelectDiceCount);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha5))
+            if (rollDiceButton.diceSelectValue == 5)
             {
                 playerSelectDiceCount = GetCountInDiceList(diceValue, 5);
                 Debug.Log("Player selected dice value: " + playerSelectDiceCount);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha6))
+            if (rollDiceButton.diceSelectValue == 6)
             {
                 playerSelectDiceCount = GetCountInDiceList(diceValue, 6);
                 Debug.Log("Player selected dice value: " + playerSelectDiceCount);

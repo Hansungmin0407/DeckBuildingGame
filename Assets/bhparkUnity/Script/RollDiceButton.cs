@@ -14,11 +14,14 @@ public class RollDiceButton : MonoBehaviour
 
     public int RollNum = 5;
 
+    public int diceSelectValue;
+
+    public bool isRollDiceButtonClicked = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        diceSelectValue = -1;
 
         outline = GetComponent<Outline>();
         outline.enabled = false;
@@ -29,7 +32,22 @@ public class RollDiceButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if(diceAnimation0.isMouseClickedCount)
+        {
+            diceSelectValue = diceMachine.diceValue[0];
+        }
+        else if (diceAnimation1.isMouseClickedCount)
+        {
+            diceSelectValue = diceMachine.diceValue[1];
+        }
+        else if (diceAnimation2.isMouseClickedCount)
+        {
+            diceSelectValue = diceMachine.diceValue[2];
+        }
+
+
+
     }
 
     void OnMouseDown()
@@ -47,6 +65,8 @@ public class RollDiceButton : MonoBehaviour
             Debug.Log(RollNum);
             Debug.Log("No rolls left!");
         }
+
+        isRollDiceButtonClicked = true;
     }
 
     private void OnMouseEnter()

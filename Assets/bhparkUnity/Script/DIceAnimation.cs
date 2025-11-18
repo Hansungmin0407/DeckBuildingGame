@@ -11,6 +11,8 @@ public class DIceAnimation : MonoBehaviour
 
     public DiceMachine diceMachine;
 
+    public RollDiceButton rollDiceButton;
+
 
     private float _diceTransformRotationX;
 
@@ -18,7 +20,7 @@ public class DIceAnimation : MonoBehaviour
 
     private float _diceTransformRotationZ;
 
-    private int _isMouseClickedCount;
+    public bool isMouseClickedCount;
 
 
     Vector3 _diceTransformPosition;
@@ -30,7 +32,7 @@ public class DIceAnimation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
         _diceTransformRotation = new Vector3[6];
 
 
@@ -53,7 +55,7 @@ public class DIceAnimation : MonoBehaviour
         outline = GetComponent<Outline>();
         outline.enabled = false;
 
-        _isMouseClickedCount = 0;
+        isMouseClickedCount = false;
 
 
         _diceTransformRotationX = 0;
@@ -94,11 +96,12 @@ public class DIceAnimation : MonoBehaviour
 
     private void OnMouseDown()
     {
-        _isMouseClickedCount++;
-        
-        if(diceMachine.diceValue[0]==0)
+        if (rollDiceButton.isRollDiceButtonClicked)
+        { 
+            isMouseClickedCount = true;
 
-        Debug.Log("Dice Clicked");
+            Debug.Log("Dice Clicked");
+        }
     }
 
     private void DiceRolling()
