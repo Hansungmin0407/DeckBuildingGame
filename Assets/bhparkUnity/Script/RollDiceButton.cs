@@ -11,6 +11,14 @@ public class RollDiceButton : MonoBehaviour
     public DIceAnimation diceAnimation1;
     public DIceAnimation diceAnimation2;
 
+    public Transform diceAnimation0Transform;
+    public Transform diceAnimation1Transform;
+    public Transform diceAnimation2Transform;
+
+    public Transform playerTransform;
+
+    public Transform rollcubeTransform;
+
 
     public int RollNum = 5;
 
@@ -27,13 +35,27 @@ public class RollDiceButton : MonoBehaviour
         outline.enabled = false;
 
 
+        diceAnimation0Transform = diceAnimation0.GetComponent<Transform>();
+        diceAnimation1Transform = diceAnimation1.GetComponent<Transform>();
+        diceAnimation2Transform = diceAnimation2.GetComponent<Transform>();
+
+        rollcubeTransform = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        rollcubeTransform.position = playerTransform.position + new Vector3(3f, 7f, 0f);
 
-        if(diceAnimation0.isMouseClickedCount)
+        diceAnimation0Transform.position = playerTransform.position + new Vector3(0f, 5f, 2f);
+        diceAnimation1Transform.position = playerTransform.position + new Vector3(3f, 5f, 2f);
+        diceAnimation2Transform.position = playerTransform.position + new Vector3(6f, 5f, 2f);
+
+
+
+
+        if (diceAnimation0.isMouseClickedCount)
         {
             diceSelectValue = diceMachine.diceValue[0];
         }

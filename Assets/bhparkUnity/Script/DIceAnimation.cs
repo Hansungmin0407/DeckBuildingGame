@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal;
 public class DIceAnimation : MonoBehaviour
 {
 
+    public Transform playerTransform;
+
     Transform diceTransform;
 
     public Outline outline;
