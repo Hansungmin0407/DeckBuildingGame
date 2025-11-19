@@ -6,6 +6,9 @@ using UnityEngine;
 public class AniController : MonoBehaviour
 {
     private Animator anim;
+    public AudioSource footstepAudio;
+    public AudioSource jumpAudio;
+    public AudioSource kirat;
     public float moveSpeed = 5.0f; 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,10 +21,13 @@ public class AniController : MonoBehaviour
     public IEnumerator NextBattle(float distance)
     {
         anim.SetBool("NextStage", true);
+        if (footstepAudio != null && !footstepAudio.isPlaying)
+        {
+            footstepAudio.Play();
+        }
 
         Vector3 startPosition = transform.position;
         Vector3 endPosition = startPosition + (Vector3.right * distance);
-        
         float enlapse = 0f;
         float duration = distance / moveSpeed;
 
@@ -33,6 +39,11 @@ public class AniController : MonoBehaviour
             yield return null;
         }
         transform.position = endPosition;
+
+        if (footstepAudio != null && footstepAudio.isPlaying)
+        {
+            footstepAudio.Stop();
+        }
         anim.SetBool("NextStage", false);
     }
 

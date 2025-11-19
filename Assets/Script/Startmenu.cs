@@ -7,10 +7,12 @@ public class Startmenu : MonoBehaviour
 {
     [SerializeField]
     private Image fadeImage;
+    public AudioSource clickSound;
 
     public float fadeDuration = 1.5f;
-    public bool inGame = false;
+    private bool inGame = false;
     public float waitTime = 0.5f;
+    private bool _isAudioPlayed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -20,12 +22,22 @@ public class Startmenu : MonoBehaviour
     public void LoadInGameScene()
     {
         Debug.Log("Game Start");
+        if (!_isAudioPlayed)
+        {
+            clickSound.Play();
+            _isAudioPlayed = true;
+        }
         StartCoroutine(FadeOut(false));
     }
 
     public void GameQuit()
     {
         Debug.Log("Game Quit");
+        if (!_isAudioPlayed)
+        {
+            clickSound.Play();
+            _isAudioPlayed = true;
+        }
         StartCoroutine(FadeOut(true));
     }
 

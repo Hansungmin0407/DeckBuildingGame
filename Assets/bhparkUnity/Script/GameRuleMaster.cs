@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameRuleMaster : MonoBehaviour
 {
@@ -50,8 +51,10 @@ public class GameRuleMaster : MonoBehaviour
     public Startmenu startmenu;
 
     public List<Monster> Monsters;
+    public AudioSource preAttackAudio;
+    public AudioSource attackAudio;
+    public ParticleSystem attackEffect;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         diceMachine = DiceMachine.GetComponentInChildren<DiceMachine>();
@@ -85,7 +88,18 @@ public class GameRuleMaster : MonoBehaviour
         diceMachine.playerInput = false;
 
         playerAnimator.AttackAni();
-        yield return new WaitForSeconds(hitDelay);
+
+        float targetVolume = 0.1f;
+        float timer = 0f;
+        preAttackAudio.volume = 0f;
+        preAttackAudio.Play();
+
+        while (timer < hitDelay)
+        {
+            timer += Time.deltaTime;
+            preAttackAudio.volume = Mathf.Lerp(0f, targetVolume, timer / hitDelay);
+            yield return null;
+        }
 
         if (currentStage >= Monsters.Count)
         {
@@ -93,7 +107,13 @@ public class GameRuleMaster : MonoBehaviour
             yield break;
         }
 
+        preAttackAudio.Stop();
         Monster currentMonster = Monsters[currentStage];
+        if (attackEffect != null)
+        {
+            attackEffect.Play();
+            attackAudio.Play();
+        }
         int Damage = count * 10;
         float monsterAnimTime = currentMonster.TakeDamage(Damage);
 
