@@ -15,7 +15,7 @@ public class MinotaurAni : MonoBehaviour, IMonsterAnimatable
 
     public float DamagedAni()
     {
-        anim.SetTrigger("Damaged1");
+        anim.SetTrigger("Damaged");
         HitAudio.Play();
         return damagedAnimLength;
     }

@@ -6,53 +6,35 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 public class GameRuleMaster : MonoBehaviour
-{
+{ 
+    public GameObject DiceMachine;
 
-    public AniController playerAnimator;
+    public GameObject ItemManager;
+
+    public GameObject Enemy;
+
+    public RollDiceButton diceButton;
+
+    DiceMachine diceMachine;
+
+    ItemManager itemManager;
 
     public float hitDelay = 1.0f;
     public float runningAnimTime = 7.0f;
     public bool isAttacking = false;
     private int currentStage = 0;
 
-    public GameObject DiceMachine;
-
-    //1. 다이스 정보 가져오기
-
-    //- 다이스 값
-    //- 플레이어의 선택한 키워드
-    //- 다이스 개수 X 선택 키워드 
-
-    public GameObject ItemManager;
-
-    //2. 아이템 정보 가져오기
-
-    //- 아이템 키워드
-    //- 아이템 효과
-    public GameObject Enemy;
-
-    //3. 몬스터 정보 가져오기
-
-    //- 몬스터 체력
-    //- 몬스터 디버프
-
-    //=============
-
-    // 데미지 산출
-
-
-
-    //=============
-
-    DiceMachine diceMachine;
-
-    ItemManager itemManager;
+    public AniController playerAnimator;
 
     public Startmenu startmenu;
 
+    public List<DIceAnimation> dIceAnimations;
     public List<Monster> Monsters;
+
     public AudioSource preAttackAudio;
     public AudioSource attackAudio;
+    public AudioSource BGM;
+    public AudioSource Victorytriumph;
     public ParticleSystem attackEffect;
 
     void Start()
@@ -63,20 +45,19 @@ public class GameRuleMaster : MonoBehaviour
         {
             Monsters = new List<Monster>(Enemy.GetComponentsInChildren<Monster>());
         }
-
+        BGM.Play();
         Debug.Log("Game Rule Master is Running");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            diceMachine.RollDice();
-        }
-
         if (diceMachine.playerSelectDiceCount > 0 && !isAttacking)
         {
+            for (int i = 0; i < 3; i++)
+            {
+                dIceAnimations[i].PlayAudio(2);
+            }
             StartCoroutine(PlayerAttack(diceMachine.playerSelectDiceCount));
             diceMachine.playerSelectDiceCount = 0;
         }
@@ -85,8 +66,6 @@ public class GameRuleMaster : MonoBehaviour
     private IEnumerator PlayerAttack(int count)
     {
         isAttacking = true;
-        diceMachine.playerInput = false;
-
         playerAnimator.AttackAni();
 
         float targetVolume = 0.1f;
@@ -124,12 +103,25 @@ public class GameRuleMaster : MonoBehaviour
             currentStage++;
             if (!(currentStage >= Monsters.Count))
             {
+                diceButton.RollNum = 5;
                 StartCoroutine(playerAnimator.NextBattle(38.0f));
 
                 yield return new WaitForSeconds(runningAnimTime);
             }
             else
             {
+                float bgmVolume = BGM.volume;
+                timer = 0f;
+                while (timer < hitDelay)
+                {
+                    timer += Time.deltaTime;
+                    BGM.volume = Mathf.Lerp(bgmVolume, 0f, timer / hitDelay);
+
+                    yield return null;
+                }
+                BGM.Stop();
+
+                Victorytriumph.Play();
                 playerAnimator.VictoryAni();
                 playerAnimator.jumpAudio.Play();
                 yield return new WaitForSeconds(1.0f);
@@ -144,7 +136,5 @@ public class GameRuleMaster : MonoBehaviour
         }
 
         isAttacking = false;
-        diceMachine.RollDice();
-        diceMachine.playerInput = true;
     }
 }

@@ -1550,6 +1550,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa89c406a964d7780afb86370e3860d, type: 3}
+--- !u!114 &85321183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+  m_PrefabInstance: {fileID: 1118437598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae255465ec6909449be3096bfbeeed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DIceAnimation
 --- !u!1 &90308998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,7 +2234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.000012755393
+      value: -0.00002634525
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4940,7 +4951,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.2, y: 3.0500002, z: -10.500015}
+  m_LocalPosition: {x: -19.2, y: 3.0500002, z: -10.500029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5210,6 +5221,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 697758681504488920, guid: 865743adce956574b94f88404924b5a0, type: 3}
   m_PrefabInstance: {fileID: 221086119}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &354137996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+  m_PrefabInstance: {fileID: 1118437598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae255465ec6909449be3096bfbeeed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DIceAnimation
 --- !u!4 &354336679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418528, guid: 2de93cd228a72ef41b0ff73b26861664, type: 3}
@@ -6018,6 +6040,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4264342752944190, guid: dd97834f6f07b5f48967e131f371b7f0, type: 3}
   m_PrefabInstance: {fileID: 416300377}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &420965913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+  m_PrefabInstance: {fileID: 1118437598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae255465ec6909449be3096bfbeeed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DIceAnimation
 --- !u!1001 &421208194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6397,10 +6430,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 437568423}
+  - component: {fileID: 437568419}
   - component: {fileID: 437568422}
   - component: {fileID: 437568421}
   - component: {fileID: 437568420}
-  - component: {fileID: 437568419}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6637,9 +6670,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bac203da0a1514242a3df92ec1c099ef, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7067,11 +7100,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 699388389}
   m_SourcePrefab: {fileID: 100100000, guid: c35b4f7b6db0440a8b9972af1d27adea, type: 3}
---- !u!1 &488292382 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2226043203960135751, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-  m_PrefabInstance: {fileID: 776271422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &494686348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10790,127 +10818,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4733772755456769034, guid: 3ad7a1cffb2556547a8b7e60fd320431, type: 3}
   m_PrefabInstance: {fileID: 775566055}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &776271422
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: minotaurDead
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: playerAttack
-      value: 
-      objectReference: {fileID: 72909209}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDead
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: enemyMinotaur
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: enemySkeleton
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: minotaurDamage
-      value: 
-      objectReference: {fileID: 507546599}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 72909209}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDamage
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDead.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: skeletonDamage.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDead.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDead.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2037681270}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDead.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1576786135}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDamage.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1097761019}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDamage.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2037681270}
-    - target: {fileID: 510316934284308337, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: 'skeletonDamage.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1576786135}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.35009
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.93352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935173163449029682, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226043203960135751, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
-      propertyPath: m_Name
-      value: DiceMachine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4d2601f86be5af544abb7708f5d1463d, type: 3}
 --- !u!1001 &776878046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13495,7 +13402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964859838461161948, guid: 6839a8d6998e86d4282063ffdacb0c15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.40028855
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 8964859838461161948, guid: 6839a8d6998e86d4282063ffdacb0c15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14775,6 +14682,168 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4733772755456769034, guid: 3ad7a1cffb2556547a8b7e60fd320431, type: 3}
   m_PrefabInstance: {fileID: 1111341087}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1118437598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 417154487824384391, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_Name
+      value: DiceMachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.53199
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.60128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725110878493943152, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DiceShake
+      value: 
+      objectReference: {fileID: 473216678}
+    - target: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: diceSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DicePosition
+      value: 
+      objectReference: {fileID: 1244495974}
+    - target: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DiceSelected
+      value: 
+      objectReference: {fileID: 1655303919}
+    - target: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: gameRuleMaster
+      value: 
+      objectReference: {fileID: 1420711969}
+    - target: {fileID: 4258342861421649406, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
+    - target: {fileID: 5211665738082237661, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
+    - target: {fileID: 5211665738082237661, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: rollcubeTransform
+      value: 
+      objectReference: {fileID: 1118437599}
+    - target: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DiceShake
+      value: 
+      objectReference: {fileID: 473216678}
+    - target: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: diceSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DicePosition
+      value: 
+      objectReference: {fileID: 1244495974}
+    - target: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DiceSelected
+      value: 
+      objectReference: {fileID: 1655303919}
+    - target: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: gameRuleMaster
+      value: 
+      objectReference: {fileID: 1420711969}
+    - target: {fileID: 6379057234467567166, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
+    - target: {fileID: 7163687954343660142, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
+    - target: {fileID: 7163687954343660142, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: diceAnimations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163687954343660142, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: 'diceAnimations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 85321183}
+    - target: {fileID: 7163687954343660142, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: 'diceAnimations.Array.data[1]'
+      value: 
+      objectReference: {fileID: 354137996}
+    - target: {fileID: 7163687954343660142, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: 'diceAnimations.Array.data[2]'
+      value: 
+      objectReference: {fileID: 420965913}
+    - target: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DiceShake
+      value: 
+      objectReference: {fileID: 473216678}
+    - target: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: diceSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DicePosition
+      value: 
+      objectReference: {fileID: 1244495974}
+    - target: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: DiceSelected
+      value: 
+      objectReference: {fileID: 1655303919}
+    - target: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: gameRuleMaster
+      value: 
+      objectReference: {fileID: 1420711969}
+    - target: {fileID: 9177798203942597151, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+--- !u!4 &1118437599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1228665060940858729, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+  m_PrefabInstance: {fileID: 1118437598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1126897543
 GameObject:
   m_ObjectHideFlags: 0
@@ -15864,6 +15933,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1980269432100092064, guid: f1a980b88ddab6e4ea6fa53f1447a65b, type: 3}
   m_PrefabInstance: {fileID: 1951331496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1241865158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 417154487824384391, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+  m_PrefabInstance: {fileID: 1118437598}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1242385053 stripped
 Transform:
@@ -18251,6 +18325,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4733772755456769034, guid: 3ad7a1cffb2556547a8b7e60fd320431, type: 3}
   m_PrefabInstance: {fileID: 1420179528}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420711969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+  m_PrefabInstance: {fileID: 1473465196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124c5ccc114e784e9abe2b22bd88716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!1001 &1421846434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18729,6 +18814,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 1682755043}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: Enemy
       value: 
       objectReference: {fileID: 1320284988}
@@ -18745,9 +18834,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 437568419}
     - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: diceButton
+      value: 
+      objectReference: {fileID: 1879060686}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: DiceMachine
       value: 
-      objectReference: {fileID: 488292382}
+      objectReference: {fileID: 1241865158}
     - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: ItemManager
       value: 
@@ -18772,6 +18865,14 @@ PrefabInstance:
       propertyPath: enemySkeleton
       value: 
       objectReference: {fileID: 1097761019}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: Victorytriumph
+      value: 
+      objectReference: {fileID: 1786053294}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: Victorytriumpt
+      value: 
+      objectReference: {fileID: 1786053294}
     - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: playerAnimator
       value: 
@@ -18804,6 +18905,22 @@ PrefabInstance:
       propertyPath: 'Monsters.Array.data[3]'
       value: 
       objectReference: {fileID: 507546602}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: dIceAnimations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: 'dIceAnimations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 85321183}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: 'dIceAnimations.Array.data[1]'
+      value: 
+      objectReference: {fileID: 354137996}
+    - target: {fileID: 221007518623637451, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
+      propertyPath: 'dIceAnimations.Array.data[2]'
+      value: 
+      objectReference: {fileID: 420965913}
     - target: {fileID: 7075567127794454288, guid: 8280d315ad7c0fd4ea577c7bfe6aece4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.35009
@@ -21217,7 +21334,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: 2.5
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -21769,11 +21886,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a72c32f37bf4878418307d1ba47e9a06, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Resource: {fileID: 8300000, guid: 525f96d5b428c8c448c4cb14a07ab944, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.15
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -24009,6 +24126,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4264342752944190, guid: dd97834f6f07b5f48967e131f371b7f0, type: 3}
   m_PrefabInstance: {fileID: 122090330}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1879060686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5211665738082237661, guid: 4cbb966bda06a7444b902db721da9d82, type: 3}
+  m_PrefabInstance: {fileID: 1118437598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b962a7befc86a44870a7c45376e1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollDiceButton
 --- !u!1001 &1885370861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28220,7 +28348,7 @@ SceneRoots:
   - {fileID: 897217649}
   - {fileID: 90308999}
   - {fileID: 1473465196}
-  - {fileID: 776271422}
+  - {fileID: 1118437598}
   - {fileID: 135671727}
   - {fileID: 1320284987}
   - {fileID: 176383943}

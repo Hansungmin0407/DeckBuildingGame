@@ -1,42 +1,35 @@
 using System.Runtime.CompilerServices;
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class DIceAnimation : MonoBehaviour
 {
-
     public Transform playerTransform;
-
     Transform diceTransform;
+
+    public int myIndex;
 
     public Outline outline;
 
     public DiceMachine diceMachine;
 
-    public RollDiceButton rollDiceButton;
+    public GameRuleMaster gameRuleMaster;
 
+    public AudioSource DiceShake;
+    public AudioSource DicePosition;
+    public AudioSource DiceSelected;
 
     private float _diceTransformRotationX;
-
     private float _diceTransformRotationY;
-
     private float _diceTransformRotationZ;
 
-    public bool isMouseClickedCount;
-
-
     Vector3 _diceTransformPosition;
-
     private Vector3[] _diceTransformRotation;
 
-    private bool _isDiceRolling = true;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         _diceTransformRotation = new Vector3[6];
-
 
         _diceTransformRotation[0] = new Vector3(0, -210, 0);
         _diceTransformRotation[1] = new Vector3(90, -210, 0);
@@ -45,92 +38,87 @@ public class DIceAnimation : MonoBehaviour
         _diceTransformRotation[4] = new Vector3(90, -30, 0);
         _diceTransformRotation[5] = new Vector3(0, -30, 0);
 
-
-
-
         diceTransform = GetComponent<Transform>();
-
         _diceTransformPosition = diceTransform.position;
-
-
-
         outline = GetComponent<Outline>();
         outline.enabled = false;
-
-        isMouseClickedCount = false;
-
-
-        _diceTransformRotationX = 0;
-        _diceTransformRotationY = 0;
-        _diceTransformRotationZ = 0;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (_isDiceRolling == true)
+        if (diceMachine.IsRolling)
         {
             DiceRolling();
         }
-        else
-        {
-
-        }
-       
-
-
     }
 
     private void OnMouseEnter()
     {
-        
-        outline.enabled = true;
-
+        if (!diceMachine.IsRolling && !gameRuleMaster.isAttacking)
+            outline.enabled = true;
     }
 
     private void OnMouseExit()
     {
-
         outline.enabled = false;
     }
 
     private void OnMouseDown()
     {
-        if (rollDiceButton.isRollDiceButtonClicked)
-        { 
-            isMouseClickedCount = true;
+        if (diceMachine.IsRolling) return;
 
-            Debug.Log("Dice Clicked");
-        }
+        if (gameRuleMaster.isAttacking) return;
+
+        if (diceMachine.IsMouseClickedCount) return;
+
+        PlayAudio(2);
+        diceMachine.OnDiceClicked(myIndex);
+    }
+
+    public void RestartRolling()
+    {
+        PlayAudio(0);
+    }
+
+    public void SetDiceFinalRotation(int diceValue)
+    {
+        Debug.Log("SetDiceFinalRotation called with diceValue: " + diceValue);
+        Debug.Log("Final Rotation: " + _diceTransformRotation[diceValue - 1]);
+        PlayAudio(1);
+
+        diceTransform.rotation = Quaternion.Euler(_diceTransformRotation[diceValue - 1]);
     }
 
     private void DiceRolling()
     {
-
         _diceTransformRotationX += Time.deltaTime * 300;
         _diceTransformRotationY += Time.deltaTime * 300;
         _diceTransformRotationZ += Time.deltaTime * 300;
-
-
 
         _diceTransformPosition.x = _diceTransformRotationX;
         _diceTransformPosition.y = _diceTransformRotationY;
         _diceTransformPosition.z = _diceTransformRotationZ;
 
-
         diceTransform.rotation = Quaternion.Euler(_diceTransformPosition);
-
     }
 
-    public void SetDiceFinalRotation(int diceValue)
+    public void PlayAudio(int Getnum)
     {
-        Debug.Log("SetDiceFinalRotation called with diceValue: " + diceValue    );
-        Debug.Log("Final Rotation: " + _diceTransformRotation[diceValue - 1]);
+        // 현재 DiceShake(주사위 굴러가는 소리)는 짜쳐서 안 넣음
 
-        _isDiceRolling = false;
-        diceTransform.rotation = Quaternion.Euler(_diceTransformRotation[diceValue -1]);
+        if (Getnum == 1)
+        {
+            if (!DicePosition.isPlaying)
+            {
+                DicePosition.Play();
+            }
+        }
+        else if (Getnum == 2)
+        {
+            if (!DiceSelected.isPlaying)
+            {
+                DiceSelected.Play();
+            }
+        }
     }
-
 }
