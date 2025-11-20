@@ -80,10 +80,10 @@ public class DiceMachine : MonoBehaviour
     public int GetCountInDiceList(List<int> list, int targetNumber)
     {
         int count = 0;
-        // ¸®½ºÆ®ÀÇ ¸ğµç ¿ä¼Ò¸¦ ¼øÈ¸
+        // ë¦¬ìŠ¤íŠ¸ì˜ ëª¨ë“  ìš”ì†Œë¥¼ ìˆœíšŒ
         foreach (int number in list)
         {
-            // ¿ä¼Ò°¡ Ã£´Â ¼ıÀÚ¿Í ÀÏÄ¡ÇÏ¸é Ä«¿îÆ® Áõ°¡
+            // ìš”ì†Œê°€ ì°¾ëŠ” ìˆ«ìì™€ ì¼ì¹˜í•˜ë©´ ì¹´ìš´íŠ¸ ì¦ê°€
             if (number == targetNumber)
             {
                 count++;

@@ -1783,6 +1783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_UnityChan
       objectReference: {fileID: 0}
+    - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.5
@@ -13423,6 +13427,14 @@ PrefabInstance:
       propertyPath: diceMachine
       value: 
       objectReference: {fileID: 488292383}
+    - target: {fileID: 6526272983048821396, guid: 103aa0b9dd9d58a4085328a39d2b6550, type: 3}
+      propertyPath: rollDiceButton
+      value: 
+      objectReference: {fileID: 1802231519}
+    - target: {fileID: 6526272983048821396, guid: 103aa0b9dd9d58a4085328a39d2b6550, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18899,7 +18911,14 @@ MonoBehaviour:
   diceAnimation0: {fileID: 1134898967}
   diceAnimation1: {fileID: 1588046953}
   diceAnimation2: {fileID: 764209207}
+  diceAnimation0Transform: {fileID: 0}
+  diceAnimation1Transform: {fileID: 0}
+  diceAnimation2Transform: {fileID: 0}
+  playerTransform: {fileID: 0}
+  rollcubeTransform: {fileID: 0}
   RollNum: 5
+  diceSelectValue: 0
+  isRollDiceButtonClicked: 0
 --- !u!114 &1802231520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20295,6 +20314,14 @@ PrefabInstance:
       propertyPath: diceMachine
       value: 
       objectReference: {fileID: 488292383}
+    - target: {fileID: 6526272983048821396, guid: 103aa0b9dd9d58a4085328a39d2b6550, type: 3}
+      propertyPath: rollDiceButton
+      value: 
+      objectReference: {fileID: 1802231519}
+    - target: {fileID: 6526272983048821396, guid: 103aa0b9dd9d58a4085328a39d2b6550, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23565,6 +23592,14 @@ PrefabInstance:
       propertyPath: diceMachine
       value: 
       objectReference: {fileID: 488292383}
+    - target: {fileID: 6526272983048821396, guid: 103aa0b9dd9d58a4085328a39d2b6550, type: 3}
+      propertyPath: rollDiceButton
+      value: 
+      objectReference: {fileID: 1802231519}
+    - target: {fileID: 6526272983048821396, guid: 103aa0b9dd9d58a4085328a39d2b6550, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 72909211}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

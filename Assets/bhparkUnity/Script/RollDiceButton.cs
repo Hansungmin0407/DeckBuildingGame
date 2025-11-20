@@ -41,18 +41,34 @@ public class RollDiceButton : MonoBehaviour
 
         rollcubeTransform = GetComponent<Transform>();
 
+        if (playerTransform == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+            }
+            else
+            {
+                playerObj = GameObject.Find("Player");
+                if (playerObj != null)
+                {
+                    playerTransform = playerObj.transform;
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerTransform == null) return;
+
         rollcubeTransform.position = playerTransform.position + new Vector3(3f, 7f, 0f);
 
         diceAnimation0Transform.position = playerTransform.position + new Vector3(0f, 5f, 2f);
         diceAnimation1Transform.position = playerTransform.position + new Vector3(3f, 5f, 2f);
         diceAnimation2Transform.position = playerTransform.position + new Vector3(6f, 5f, 2f);
-
-
 
 
         if (diceAnimation0.isMouseClickedCount)
@@ -67,9 +83,6 @@ public class RollDiceButton : MonoBehaviour
         {
             diceSelectValue = diceMachine.diceValue[2];
         }
-
-
-
     }
 
     void OnMouseDown()
@@ -93,19 +106,11 @@ public class RollDiceButton : MonoBehaviour
 
     private void OnMouseEnter()
     {
-
         outline.enabled = true;
-
     }
 
     private void OnMouseExit()
     {
-
         outline.enabled = false;
     }
-
-
-
-
-
 }
