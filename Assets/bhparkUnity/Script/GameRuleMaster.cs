@@ -131,6 +131,9 @@ public class GameRuleMaster : MonoBehaviour
             else
             {
                 playerAnimator.VictoryAni();
+                playerAnimator.jumpAudio.Play();
+                yield return new WaitForSeconds(1.0f);
+                playerAnimator.kirat.Play();
                 yield return new WaitForSeconds(hitDelay * 3);
 
                 StartCoroutine(playerAnimator.NextBattle(38.0f));

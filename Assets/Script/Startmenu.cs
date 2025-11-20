@@ -10,7 +10,7 @@ public class Startmenu : MonoBehaviour
     public AudioSource clickSound;
 
     public float fadeDuration = 1.5f;
-    private bool inGame = false;
+    public bool inGame = false;
     public float waitTime = 0.5f;
     private bool _isAudioPlayed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

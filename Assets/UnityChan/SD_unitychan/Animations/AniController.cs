@@ -55,5 +55,6 @@ public class AniController : MonoBehaviour
     public void VictoryAni()
     {
         anim.SetTrigger("Victory");
+
     }
 }
