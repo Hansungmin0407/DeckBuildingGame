@@ -35,6 +35,7 @@ public class GameRuleMaster : MonoBehaviour
     public AudioSource attackAudio;
     public AudioSource BGM;
     public AudioSource Victorytriumph;
+    public ParticleSystem MagicCircle;
     public ParticleSystem attackEffect;
 
     void Start()
@@ -67,6 +68,7 @@ public class GameRuleMaster : MonoBehaviour
     {
         isAttacking = true;
         playerAnimator.AttackAni();
+        MagicCircle.Play();
 
         float targetVolume = 0.1f;
         float timer = 0f;
@@ -90,6 +92,7 @@ public class GameRuleMaster : MonoBehaviour
         Monster currentMonster = Monsters[currentStage];
         if (attackEffect != null)
         {
+            MagicCircle.Stop();
             attackEffect.Play();
             attackAudio.Play();
         }
