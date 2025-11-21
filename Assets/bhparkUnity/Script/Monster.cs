@@ -4,12 +4,15 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public int MaxHP;
     public int monsterHP;
     private IMonsterAnimatable monsterAnimatable;
 
     void Awake()
     {
         monsterAnimatable = GetComponent<IMonsterAnimatable>();
+        MaxHP = monsterHP;
     }
 
     public float TakeDamage(int damage)
