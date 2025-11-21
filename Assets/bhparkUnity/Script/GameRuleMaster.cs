@@ -4,6 +4,7 @@ using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class GameRuleMaster : MonoBehaviour
 { 
@@ -60,6 +61,15 @@ public class GameRuleMaster : MonoBehaviour
             }
             StartCoroutine(PlayerAttack(diceMachine.playerSelectDiceCount));
             diceMachine.playerSelectDiceCount = 0;
+        }
+
+
+        //// If Roll Dice RollNum is 0 . Defeat.
+        if(diceButton.RollNum == -1 )
+        {
+
+            SceneManager.LoadScene("DefeatScene");
+
         }
     }
 

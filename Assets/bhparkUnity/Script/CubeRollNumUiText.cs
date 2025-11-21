@@ -20,6 +20,10 @@ public class CubeRollNumText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rollNumText.text = rollDiceButton.RollNum.ToString();
+        if ( rollDiceButton.RollNum > -1)
+        {
+            rollNumText.text = rollDiceButton.RollNum.ToString();
+        }
+        
     }
 }

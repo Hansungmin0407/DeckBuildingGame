@@ -10,7 +10,7 @@ public class RollDiceButton : MonoBehaviour
 
     public Transform rollcubeTransform;
 
-    public int RollNum = 5;
+    public int RollNum = 10;
     public bool isRollDiceButtonClicked = false;
 
     void Start()
@@ -40,9 +40,9 @@ public class RollDiceButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (diceMachine.IsRolling || RollNum > 0)
+        if (diceMachine.IsRolling || RollNum > -1)
         {
-            if (diceMachine.IsRolling && RollNum > 0)
+            if (diceMachine.IsRolling && RollNum > -1)
             {
                 RollNum--;
             }
