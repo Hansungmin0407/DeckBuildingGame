@@ -66,7 +66,7 @@ public class DiceMachine : MonoBehaviour
         }
     }
 
-    private void StartRollingState()
+    public void StartRollingState()
     {
         IsRolling = true;
         IsMouseClickedCount = false;
@@ -78,7 +78,7 @@ public class DiceMachine : MonoBehaviour
         }
     }
 
-    private void StopRollingState()
+    public void StopRollingState()
     {
         RollDice(); 
         IsRolling = false;
