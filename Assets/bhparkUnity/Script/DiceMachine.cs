@@ -7,7 +7,6 @@ using UnityEditor.SceneManagement;
 
 public class DiceMachine : MonoBehaviour
 {
-    public bool playerInput = true;
     public List<DIceAnimation> diceAnimations;
 
     public Transform playerTransform;
@@ -21,6 +20,7 @@ public class DiceMachine : MonoBehaviour
 
     public bool IsRolling { get; set; } = true;
     public bool IsMouseClickedCount { get; set; } = false;
+    public AudioSource deniedSound;
 
     void Start()
     {
@@ -30,12 +30,12 @@ public class DiceMachine : MonoBehaviour
 
     void Update()
     {
-        if (playerInput && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             ToggleDiceState();
         }
 
-        if (playerInput && Input.GetKeyDown(KeyCode.Alpha7))
+        if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             playerSelectDiceCount = 300;
             Debug.Log("Player selected dice value: " + playerSelectDiceCount);
@@ -92,7 +92,11 @@ public class DiceMachine : MonoBehaviour
 
     public void OnDiceClicked(int index)
     {
-        if (IsMouseClickedCount) return;
+        if (IsMouseClickedCount)
+        {
+            deniedSound.Play();
+            return;
+        }
 
         if (index >= 0 && index < diceValue.Count)
         {
