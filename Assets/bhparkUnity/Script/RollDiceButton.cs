@@ -40,11 +40,18 @@ public class RollDiceButton : MonoBehaviour
 
     void OnMouseDown()
     {
+
+        Debug.Log("IsRolling, RollNum : " + diceMachine.IsRolling + RollNum );
+
+
+
         if (diceMachine.IsRolling || RollNum > -1)
         {
-            if (diceMachine.IsRolling && RollNum > -1)
+            if (diceMachine.IsRolling || RollNum > -1)
             {
                 RollNum--;
+
+                Debug.Log("Rolling is Start, RollNUM : " + RollNum);
             }
 
             isRollDiceButtonClicked = true;

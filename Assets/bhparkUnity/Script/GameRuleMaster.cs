@@ -65,7 +65,7 @@ public class GameRuleMaster : MonoBehaviour
 
 
         //// If Roll Dice RollNum is 0 . Defeat.
-        if(diceButton.RollNum == -1 )
+        if(diceButton.RollNum == -1  )
         {
 
             SceneManager.LoadScene("DefeatScene");
@@ -114,6 +114,9 @@ public class GameRuleMaster : MonoBehaviour
             if (!(currentStage >= Monsters.Count))
             {
                 diceButton.RollNum = 5;
+                diceMachine.StartRollingState();
+
+
                 StartCoroutine(playerAnimator.NextBattle(38.0f));
 
                 yield return new WaitForSeconds(runningAnimTime);

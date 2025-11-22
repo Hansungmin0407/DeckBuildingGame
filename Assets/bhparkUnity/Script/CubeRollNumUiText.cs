@@ -22,7 +22,7 @@ public class CubeRollNumText : MonoBehaviour
     {
         if ( rollDiceButton.RollNum > -1)
         {
-            rollNumText.text = rollDiceButton.RollNum.ToString();
+            rollNumText.text = "Turns Remaining " + rollDiceButton.RollNum.ToString();
         }
         
     }
