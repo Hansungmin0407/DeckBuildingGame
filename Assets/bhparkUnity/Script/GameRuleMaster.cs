@@ -40,6 +40,7 @@ public class GameRuleMaster : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("GameRuleMaster::Start()");
         diceMachine = DiceMachine.GetComponentInChildren<DiceMachine>();
         itemManager = ItemManager.GetComponentInChildren<ItemManager>();
         if (Enemy != null)
