@@ -8,6 +8,7 @@ public class Startmenu : MonoBehaviour
     [SerializeField]
     private Image fadeImage;
     public AudioSource clickSound;
+    public GameRuleMaster gameRuleMaster;
 
     public float fadeDuration = 1.5f;
     public bool inGame = false;
@@ -38,6 +39,13 @@ public class Startmenu : MonoBehaviour
             clickSound.Play();
             _isAudioPlayed = true;
         }
+        StartCoroutine(FadeOut(true));
+    }
+
+    public void Defeat()
+    {
+        Debug.Log("Defeated");
+        StartCoroutine(gameRuleMaster.TurnOffBGM());
         StartCoroutine(FadeOut(true));
     }
 
@@ -76,6 +84,8 @@ public class Startmenu : MonoBehaviour
 
     private IEnumerator FadeOut(bool quit)
     {
+        Debug.Log("quit: " + quit);
+        Debug.Log("inGame: " + inGame);
         fadeImage.gameObject.SetActive(true);
         float fadeInTimer = 0f;
         Color color = fadeImage.color;
@@ -95,13 +105,18 @@ public class Startmenu : MonoBehaviour
         color.a = 1f;
         fadeImage.color = color;
 
-        if (quit)
+        if (inGame && quit)
         {
-            Application.Quit();
+            SceneManager.LoadScene("StartMenu");
+            //SceneManager.LoadScene("DefeatScene");
         }
         else if (inGame)
         {
             SceneManager.LoadScene("StartMenu");
+        }
+        else if (quit)
+        {
+            Application.Quit();
         }
         else
         {

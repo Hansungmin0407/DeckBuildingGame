@@ -9,7 +9,8 @@ public class AniController : MonoBehaviour
     public AudioSource footstepAudio;
     public AudioSource jumpAudio;
     public AudioSource kirat;
-    public float moveSpeed = 5.0f; 
+    public float moveSpeed = 5.0f;
+    public bool isMoving = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class AniController : MonoBehaviour
     public IEnumerator NextBattle(float distance)
     {
         anim.SetBool("NextStage", true);
+        isMoving = true;
         if (footstepAudio != null && !footstepAudio.isPlaying)
         {
             footstepAudio.Play();
@@ -45,6 +47,7 @@ public class AniController : MonoBehaviour
             footstepAudio.Stop();
         }
         anim.SetBool("NextStage", false);
+        isMoving = false;
     }
 
     public void AttackAni()

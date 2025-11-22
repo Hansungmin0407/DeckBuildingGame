@@ -67,9 +67,7 @@ public class DIceAnimation : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (diceMachine.IsRolling) return;
-
-        if (gameRuleMaster.isAttacking) return;
+        if (diceMachine.IsRolling || gameRuleMaster.isAttacking) return;
 
         if (diceMachine.IsMouseClickedCount)
         {
@@ -113,24 +111,15 @@ public class DIceAnimation : MonoBehaviour
     {
         if (Getnum == 0)
         {
-            if (!DiceShake.isPlaying)
-            {
-                DiceShake.Play();
-            }
+            DiceShake.Play();
         }
         else if (Getnum == 1)
         {
-            if (!DicePosition.isPlaying)
-            {
-                DicePosition.Play();
-            }
+            DicePosition.Play();
         }
         else if (Getnum == 2)
         {
-            if (!DiceSelected.isPlaying)
-            {
-                DiceSelected.Play();
-            }
+            DiceSelected.Play();
         }
     }
 }
