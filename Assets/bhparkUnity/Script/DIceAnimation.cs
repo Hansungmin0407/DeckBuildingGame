@@ -19,6 +19,8 @@ public class DIceAnimation : MonoBehaviour
     public AudioSource DiceShake;
     public AudioSource DicePosition;
     public AudioSource DiceSelected;
+    public AudioSource DeniedSound;
+    private bool ShakingAudioPlay = false;
 
     private float _diceTransformRotationX;
     private float _diceTransformRotationY;
@@ -69,7 +71,11 @@ public class DIceAnimation : MonoBehaviour
 
         if (gameRuleMaster.isAttacking) return;
 
-        if (diceMachine.IsMouseClickedCount) return;
+        if (diceMachine.IsMouseClickedCount)
+        {
+            DeniedSound.Play();
+            return;
+        }
 
         PlayAudio(2);
         diceMachine.OnDiceClicked(myIndex);
@@ -77,7 +83,8 @@ public class DIceAnimation : MonoBehaviour
 
     public void RestartRolling()
     {
-        PlayAudio(0);
+        if (ShakingAudioPlay) PlayAudio(0);
+        ShakingAudioPlay = true;
     }
 
     public void SetDiceFinalRotation(int diceValue)
@@ -104,9 +111,14 @@ public class DIceAnimation : MonoBehaviour
 
     public void PlayAudio(int Getnum)
     {
-        // 현재 DiceShake(주사위 굴러가는 소리)는 짜쳐서 안 넣음
-
-        if (Getnum == 1)
+        if (Getnum == 0)
+        {
+            if (!DiceShake.isPlaying)
+            {
+                DiceShake.Play();
+            }
+        }
+        else if (Getnum == 1)
         {
             if (!DicePosition.isPlaying)
             {

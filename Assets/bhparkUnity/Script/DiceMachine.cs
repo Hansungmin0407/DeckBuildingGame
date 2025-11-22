@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 using UnityEditor.SceneManagement;
+using System.ComponentModel;
 
 public class DiceMachine : MonoBehaviour
 {
     public List<DIceAnimation> diceAnimations;
+
+    public Startmenu startMenu;
 
     public Transform playerTransform;
 
@@ -20,7 +23,6 @@ public class DiceMachine : MonoBehaviour
 
     public bool IsRolling { get; set; } = true;
     public bool IsMouseClickedCount { get; set; } = false;
-    public AudioSource deniedSound;
 
     void Start()
     {
@@ -94,7 +96,6 @@ public class DiceMachine : MonoBehaviour
     {
         if (IsMouseClickedCount)
         {
-            deniedSound.Play();
             return;
         }
 
