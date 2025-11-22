@@ -1,7 +1,4 @@
-using System.Runtime.CompilerServices;
-using UnityEditor.Overlays;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class DIceAnimation : MonoBehaviour
 {

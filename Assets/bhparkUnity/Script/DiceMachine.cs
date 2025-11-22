@@ -1,10 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.InputSystem;
-using UnityEditor.SceneManagement;
-using System.ComponentModel;
 
 public class DiceMachine : MonoBehaviour
 {
